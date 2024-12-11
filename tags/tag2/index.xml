@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tag2 on Heyya Welcome!</title>
+    <link>//localhost:1313/tags/tag2/</link>
+    <description>Recent content in Tag2 on Heyya Welcome!</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 11 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Blogg</title>
+      <link>//localhost:1313/posts/testing/</link>
+      <pubDate>Wed, 11 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/testing/</guid>
+      <description>&lt;h2 id=&#34;heloo-this-is-my-first-blog&#34;&gt;Heloo this is my first blog&lt;/h2&gt;&#xA;&lt;p&gt;sebenernya tanggal sekarang adalah 12 desember 2024. But for some reason,&#xA;hugo ga bisa display date di bulan 12 XD wtf&lt;/p&gt;&#xA;&lt;h3 id=&#34;update&#34;&gt;#update&lt;/h3&gt;&#xA;&lt;p&gt;ternyata bisa tapi cuma sampe 11 des. I wonder why&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
