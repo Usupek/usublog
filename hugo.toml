@@ -1,8 +1,58 @@
-baseurl      = "https://usublog.netlify.app/"
-title        = "My Blog"
+baseURL = "usublog.netlify.app"
+title   = "heyya welcome!"
 languageCode = "en-us"
-theme        = "hello-friend-ng"
-paginate     = 10
+theme = "hello-friend-ng"
+
+PygmentsCodeFences = true
+PygmentsStyle = "monokai"
+
+copyright = "" # This message is only used by the RSS template.
+
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
+
+buildDrafts  = false
+buildFuture  = false
+buildExpired = false
+canonifyURLs = true
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+enableMissingTranslationPlaceholders = false
+disableRSS     = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = false
+
+[pagination]
+  disableAliases = false
+  pagerSize = 20
+  path = 'page'
+
+[services]
+  [services.rss]
+      # Maximum number of items in the RSS feed.
+      limit = 42
+      
+#   [services.disqus]
+#     shortname = 'your-disqus-shortname'
+#   [services.googleAnalytics]
+#     ID = 'G-MEASUREMENT_ID'
+
+[permalinks]
+  posts = "/posts/:year/:month/:title/"
+
+[blackfriday]
+  hrefTargetBlank = true
+
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
+  series   = "series"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -10,53 +60,201 @@ paginate     = 10
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
 
-  # Subtitle for home
-  homeSubtitle = "This is rafi's blog, where he writes his thoghts, learnings, ideas, and plannings? I don't know, stay tunned!"
-
-  # Set disableReadOtherPosts to true in order to hide the links to other posts.
-  disableReadOtherPosts = false
-
-  # Enable sharing buttons, if you like
-  enableSharingButtons = true
-  
-  # Show a global language switcher in the navigation bar
-  enableGlobalLanguageMenu = true
-
   # Metadata mostly used in document's head
-  description = "My new homepage or blog"
-  keywords = "homepage, blog"
+  # 
+  description = "Nice theme for homepages and blogs"
+  keywords = ""
   images = [""]
 
-[taxonomies]
-    category = "blog"
-    tag      = "tags"
-    series   = "series"
+  # Home subtitle of the index page.
+  #
+  homeSubtitle = "This is Rafi's blog. Where he share his thoughts, learnings, ideas, and plannings? who knows, stay tunned to find out!"
+
+  # Set a background for the homepage
+  # backgroundImage = "assets/images/background.jpg"
+
+  # Prefix of link to the git commit detail page. GitInfo must be enabled.
+  #
+  # gitUrl = ""
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  #
+  disableReadOtherPosts = false
+
+  # Enable theme toggle
+  # 
+  # This options enables the theme toggle for the theme. 
+  # Per default, this option is off. 
+  # The theme is respecting the prefers-color-scheme of the operating system. 
+  # With this option on, the page user is able to set the scheme he wants. 
+  enableThemeToggle = false
+
+  # Sharing buttons
+  #
+  # There are a lot of buttons preconfigured. If you want to change them,
+  # generate the buttons here: https://sharingbuttons.io
+  # and add them into your own `layouts/partials/sharing-buttons.html`
+  #
+  enableSharingButtons = true
+
+  # Global language menu
+  #
+  # Enables the global language menu.
+  #
+  enableGlobalLanguageMenu = true
+
+  # Integrate Javascript files or stylesheets by adding the url to the external assets or by
+  # linking local files with their path relative to the static folder, e.g. "css/styles.css"
+  #
+  customCSS = []
+  customJS  = []
+
+  # Toggle this option need to rebuild SCSS, requires extended version of Hugo
+  #
+  justifyContent = false  # Set "text-align: justify" to .post-content.
+
+  # Integrate Plausible.io
+  # plausibleDataDomain = 'test.com'
+  # plausibleScriptSource = 'https://plausible.io/js/script.js'
+
+  [params.author]
+    name = "Ahmad Zainurafi"
+
+  # Custom footer 
+  # If you want, you can easily override the default footer with your own content. 
+  #
+  [params.footer]
+    trademark = 2024
+    rss = false
+    copyright = false
+    author = true
+
+    topText = []
+    bottomText = []
+
+  # Colors for favicons
+  #
+  [params.favicon.color]
+    mask = "#1b1c1d"
+    msapplication = "#1b1c1d"
+    theme = "#1b1c1d"
+
+  [params.logo]
+    logoMark     = ">"
+    logoText     = "$ cd /home/usupek"
+    logoHomeLink = "/"
+    # Set true to remove the logo cursor entirely.
+    # logoCursorDisabled = false
+    # Set to a valid CSS color to change the cursor in the logo.
+    # logoCursorColor    = "#67a2c9"
+    # Set to a valid CSS time value to change the animation duration, "0s" to disable.
+    # logoCursorAnimate  = "2s"
+    # Append the current url pathname to logoText 
+    # logoCursorPathname = true
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # Addon: Startpage portrait 
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  # Uncomment this if you want a portrait on your start page
+  #
+  # [params.portrait]
+  #   path     = "/img/image.jpg"
+  #   alt      = "Portrait"
+  #   maxWidth = "50px"
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # Addon: Commento
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  # Commento is more than just a comments widget you can embed — 
+  # it’s a return to the roots of the internet. 
+  # An internet without the tracking and invasions of privacy. 
+  # An internet that is simple and lightweight. 
+  # An internet that is focused on interesting discussions, not ads. 
+  # A better internet.
+  # Uncomment this to enable Commento.
+  #
+  # [params.commento]
+  #   url = ""
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # Addon: Utteranc.es
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  # Utteranc.es is a lightweight comments widget built on GitHub issues.
+  # See https://utteranc.es/ for documentation
+  # Uncomment this to enable Utteranc.es.
+  #
+  # [params.utterances]
+  #   Your GitHub repository
+  #
+  #   repository = ""
+  #
+  #   label used for GitHub issues
+  #
+  #   label      = ""
+  # 
+  #   Blog Post <-> Issue mapping. This parameter is optional. Possible values are:
+  #      - pathname
+  #      - url
+  #      - title
+  #      - og:title
+  #      - issue number
+  #      - specific term
+  #
+  #   issueTerm  = ""
+  #
+  #   Theme used: possible values are:
+  #      - github-light
+  #      - github-dark
+  #      - preferred-color-scheme
+  #      - github-dark-orange
+  #      - icy-dark
+  #      - dark-blue
+  #      - photon-dark
+  #      - boxy-light
+  #      - gruvbox-dark
+  #
+  #  theme = "photon-dark"
+  # 
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #  
+  # Addon: Social icons
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  #
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:ahmadzainurafialfikri@gmail.com"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/Usupek"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/ahmad-zainurafi-alfikri-a3233623a"
 
 [languages]
   [languages.en]
-    title = "Heyya Welcome!"
-    keywords = ""
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-    readOtherPosts = "Read other posts"
-
+    weight    = 1
+    copyright = ''
   [languages.en.params]
-    subtitle  = "A simple theme for Hugo"
+    subtitle  = ""
 
-    [languages.en.params.logo]
-      logoText = "$ cat /inside/brainzz"
-      logoHomeLink = "/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
+  [languagesid]
+    weight    = 2
+    copyright = ''
+  [languages.id.params]
+    subtitle  = ""
 
-  # And you can even create generic menu
-  [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/posts"
-
+[menu]
   [[menu.main]]
     identifier = "about"
-    name       = "about"
-    url        = "/about"
+    name       = "About"
+    url        = "about/"
+  [[menu.main]]
+    identifier = "posts"
+    name       = "Posts"
+    url        = "posts/"
