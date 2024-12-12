@@ -52,7 +52,7 @@ Obsidian If you haven’t downloaded obsidian, go download it, it’s awesome: h
 Write post after Obsidian is installed, write something in the folder you want to use (for me it’s posts folder).">
   <meta itemprop="datePublished" content="2024-12-12T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-12-12T00:00:00+00:00">
-  <meta itemprop="wordCount" content="963">
+  <meta itemprop="wordCount" content="1435">
   <meta itemprop="image" content="https://usublog.netlify.app/">
   <meta itemprop="keywords" content="Blog,Scripting">
 
@@ -164,7 +164,7 @@ Write post after Obsidian is installed, write something in the folder you want t
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        5 minutes
+        7 minutes
 
         
       </p>
@@ -353,7 +353,133 @@ Write post after Obsidian is installed, write something in the folder you want t
 </span></span></code></pre></div><p>alright!! all done, now you can choose to <strong>deploy</strong> it to your platform of choice. I use <strong>netlify</strong> for example.</p>
 <h2 id="mega-script">Mega script!</h2>
 <p>here&rsquo;s the mega script to make things easier:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># PowerShell Script for Windows</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set variables for Obsidian to Hugo copy</span>
+</span></span><span style="display:flex;"><span>$sourcePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Users\Rafi\Documents\Obsidian Vault\posts&#34;</span>
+</span></span><span style="display:flex;"><span>$destinationPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Users\Rafi\Documents\usublog\content\posts&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set Github repo </span>
+</span></span><span style="display:flex;"><span>$myrepo <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;git@github.com:Usupek/usublog.git&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set error handling</span>
+</span></span><span style="display:flex;"><span>$ErrorActionPreference <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Stop&#34;</span>
+</span></span><span style="display:flex;"><span>Set-StrictMode -Version Latest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Change to the script&#39;s directory</span>
+</span></span><span style="display:flex;"><span>$ScriptDir <span style="color:#f92672">=</span> Split-Path -Parent $MyInvocation.MyCommand.Definition
+</span></span><span style="display:flex;"><span>Set-Location $ScriptDir
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check for required commands</span>
+</span></span><span style="display:flex;"><span>$requiredCommands <span style="color:#f92672">=</span> @<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;git&#39;</span>, <span style="color:#e6db74">&#39;hugo&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check for Python command (python or python3)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>Get-Command <span style="color:#e6db74">&#39;python&#39;</span> -ErrorAction SilentlyContinue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    $pythonCommand <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;python&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> elseif <span style="color:#f92672">(</span>Get-Command <span style="color:#e6db74">&#39;python3&#39;</span> -ErrorAction SilentlyContinue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    $pythonCommand <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;python3&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Python is not installed or not in PATH.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>foreach <span style="color:#f92672">(</span>$cmd in $requiredCommands<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>-not <span style="color:#f92672">(</span>Get-Command $cmd -ErrorAction SilentlyContinue<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        Write-Error <span style="color:#e6db74">&#34;</span>$cmd<span style="color:#e6db74"> is not installed or not in PATH.&#34;</span>
+</span></span><span style="display:flex;"><span>        exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 1: Check if Git is initialized, and initialize if necessary</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>-not <span style="color:#f92672">(</span>Test-Path <span style="color:#e6db74">&#34;.git&#34;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write-Host <span style="color:#e6db74">&#34;Initializing Git repository...&#34;</span>
+</span></span><span style="display:flex;"><span>    git init
+</span></span><span style="display:flex;"><span>    git remote add origin $myrepo
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write-Host <span style="color:#e6db74">&#34;Git repository already initialized.&#34;</span>
+</span></span><span style="display:flex;"><span>    $remotes <span style="color:#f92672">=</span> git remote
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>-not <span style="color:#f92672">(</span>$remotes -contains <span style="color:#e6db74">&#39;origin&#39;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        Write-Host <span style="color:#e6db74">&#34;Adding remote origin...&#34;</span>
+</span></span><span style="display:flex;"><span>        git remote add origin $myrepo
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 2: Sync posts from Obsidian to Hugo content folder using Robocopy</span>
+</span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;Syncing posts from Obsidian...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>-not <span style="color:#f92672">(</span>Test-Path $sourcePath<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Source path does not exist: </span>$sourcePath<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>-not <span style="color:#f92672">(</span>Test-Path $destinationPath<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Destination path does not exist: </span>$destinationPath<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use Robocopy to mirror the directories</span>
+</span></span><span style="display:flex;"><span>$robocopyOptions <span style="color:#f92672">=</span> @<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;/MIR&#39;</span>, <span style="color:#e6db74">&#39;/Z&#39;</span>, <span style="color:#e6db74">&#39;/W:5&#39;</span>, <span style="color:#e6db74">&#39;/R:3&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>$robocopyResult <span style="color:#f92672">=</span> robocopy $sourcePath $destinationPath @robocopyOptions
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>$LASTEXITCODE -ge 8<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Robocopy failed with exit code </span>$LASTEXITCODE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 3: Process Markdown files with Python script to handle image links</span>
+</span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;Processing image links in Markdown files...&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>-not <span style="color:#f92672">(</span>Test-Path <span style="color:#e6db74">&#34;images.py&#34;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Python script images.py not found.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Execute the Python script</span>
+</span></span><span style="display:flex;"><span>try <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    &amp; $pythonCommand images.py
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> catch <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Failed to process image links.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 4: Build the Hugo site</span>
+</span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;Building the Hugo site...&#34;</span>
+</span></span><span style="display:flex;"><span>try <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    hugo
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> catch <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Hugo build failed.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 5: Add changes to Git</span>
+</span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;Staging changes for Git...&#34;</span>
+</span></span><span style="display:flex;"><span>$hasChanges <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>git status --porcelain<span style="color:#f92672">)</span> -ne <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>-not $hasChanges<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write-Host <span style="color:#e6db74">&#34;No changes to stage.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    git add .
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 6: Commit changes with a dynamic message</span>
+</span></span><span style="display:flex;"><span>$commitMessage <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;New Blog Post on </span><span style="color:#66d9ef">$(</span>Get-Date -Format <span style="color:#e6db74">&#39;yyyy-MM-dd HH:mm:ss&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>$hasStagedChanges <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>git diff --cached --name-only<span style="color:#f92672">)</span> -ne <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>-not $hasStagedChanges<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write-Host <span style="color:#e6db74">&#34;No changes to commit.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write-Host <span style="color:#e6db74">&#34;Committing changes...&#34;</span>
+</span></span><span style="display:flex;"><span>    git commit -m <span style="color:#e6db74">&#34;</span>$commitMessage<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 7: Push all changes to the main branch</span>
+</span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;Deploying to GitHub Master...&#34;</span>
+</span></span><span style="display:flex;"><span>try <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    git push origin master
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> catch <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Failed to push to Master branch.&#34;</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;All done! Site synced, processed, committed, built, and deployed.&#34;</span>
+</span></span></code></pre></div>
       </div>
     </article>
 
@@ -379,7 +505,7 @@ Write post after Obsidian is installed, write something in the folder you want t
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        963 Words
+        1435 Words
       </p>
 
       <p>
