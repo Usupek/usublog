@@ -1,4 +1,4 @@
-baseURL = "usublog.netlify.app"
+baseURL = "https://usublog.netlify.app/"
 title   = "heyya welcome!"
 languageCode = "en-us"
 theme = "hello-friend-ng"
