@@ -1,28 +1,216 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on heyya welcome!</title>
-        <link>//localhost:1313/posts/</link>
+        <link>https://usublog.netlify.app/posts/</link>
         <description>Recent content in Posts on heyya welcome!</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Wed, 11 Dec 2024 00:00:00 +0000</lastBuildDate>
-        <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate>
+        <atom:link href="https://usublog.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>My Blog Pipeline</title>
+            <link>https://usublog.netlify.app/posts/2024/12/my-blog-pipeline/</link>
+            <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
+            
+            <guid>https://usublog.netlify.app/posts/2024/12/my-blog-pipeline/</guid>
+            <description>&lt;h2 id=&#34;the-setup&#34;&gt;The Setup&lt;/h2&gt;
+&lt;p&gt;In this blog I will show you a walkthrough of how my Blog Pipeline works. and maybe you can follow along!&lt;/p&gt;
+&lt;p&gt;but first, let&amp;rsquo;s get the setup done.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;disclaimer: I will only show a walkthrough for windows OS&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;obsidian&#34;&gt;Obsidian&lt;/h2&gt;
+&lt;p&gt;If you haven&amp;rsquo;t downloaded obsidian, go download it, it&amp;rsquo;s awesome: &lt;a href=&#34;https://obsidian.md/&#34;&gt;https://obsidian.md/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;write-post&#34;&gt;Write post&lt;/h3&gt;
+&lt;p&gt;after Obsidian is installed, write something in the folder you want to use (for me it&amp;rsquo;s posts folder).&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<h2 id="the-setup">The Setup</h2>
+<p>In this blog I will show you a walkthrough of how my Blog Pipeline works. and maybe you can follow along!</p>
+<p>but first, let&rsquo;s get the setup done.</p>
+<p><em>disclaimer: I will only show a walkthrough for windows OS</em></p>
+<h2 id="obsidian">Obsidian</h2>
+<p>If you haven&rsquo;t downloaded obsidian, go download it, it&rsquo;s awesome: <a href="https://obsidian.md/">https://obsidian.md/</a></p>
+<h3 id="write-post">Write post</h3>
+<p>after Obsidian is installed, write something in the folder you want to use (for me it&rsquo;s posts folder).</p>
+<p>when you wanna write something and upload it to your blog, <strong>always</strong> have some <strong>frontmatter</strong>. Like this for example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: My Blog Pipeline
+</span></span><span style="display:flex;"><span>date: 2024-12-12
+</span></span><span style="display:flex;"><span>draft: false
+</span></span><span style="display:flex;"><span>tags:
+</span></span><span style="display:flex;"><span>  - blog
+</span></span><span style="display:flex;"><span>  - scripting
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p>put this on the top of your obsidian file that you wanna upload to your blog.</p>
+<p>After you&rsquo;re done writing, then look for the folder you use for your post&rsquo;s directory (This will be needed later). Like this for example:
+!<img src="/images/Pasted%20image%2020241212193541.png" alt="Image Description"> ^2e1ce9</p>
+<h2 id="hugo">Hugo</h2>
+<p>As for the site I use Hugo.</p>
+<blockquote>
+<p>A quick intermezzo about Hugo:
+<strong>Hugo</strong> is an open-source static site generator written in Go. It <strong>generates HTML</strong> pages from source content written in markdown and can be used <strong>to build websites, blogs, and other types of web content</strong>.</p>
+</blockquote>
+<h3 id="install-hugo">Install Hugo</h3>
+<p>to install Hugo just go to this site: <a href="https://gohugo.io/installation/">https://gohugo.io/installation/</a></p>
+<p><em>an important thing to note: You&rsquo;ll need to have <strong>Git</strong>, and <strong>Go</strong> installed in your system</em></p>
+<h3 id="create-a-new-site">Create a new site</h3>
+<p>after installing Hugo, go ahead and <strong>create a new site</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo version <span style="color:#75715e">## verify hugo works</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## create a new site</span>
+</span></span><span style="display:flex;"><span>hugo new site website_name
+</span></span><span style="display:flex;"><span>cd website_name
+</span></span></code></pre></div><h3 id="hugo-themes">Hugo themes</h3>
+<p>after creating a new site, find Hugo Themes that you like: <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></p>
+<p>follow the theme instructions on how to download. The <strong>Best</strong> option is to install as a <strong>git module.</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## inititalize a git repo (in Hugo website directory)</span>
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## install a theme</span>
+</span></span><span style="display:flex;"><span>git submodule add -f https://github.com/example-theme.git theme/terminal
+</span></span></code></pre></div><p>after the theme is installed, you will have to <strong>adjust the Hugo settings</strong>. <em>Most themes</em> will have an example configuration you can use. This is usually <strong>the best way</strong> to make sure Hugo works well and out of the box.</p>
+<p>edit the <em>hugo.toml</em> to make the changes. like me for example, I use hello-friend-ng theme and this is the configuration the theme gave:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>baseurl      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;localhost&#34;</span>
+</span></span><span style="display:flex;"><span>title        <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My Blog&#34;</span>
+</span></span><span style="display:flex;"><span>languageCode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;en-us&#34;</span>
+</span></span><span style="display:flex;"><span>theme        <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello-friend-ng&#34;</span>
+</span></span><span style="display:flex;"><span>paginate     <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>params<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  dateform        <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Jan 2, 2006&#34;</span>
+</span></span><span style="display:flex;"><span>  dateformShort   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Jan 2&#34;</span>
+</span></span><span style="display:flex;"><span>  dateformNum     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2006-01-02&#34;</span>
+</span></span><span style="display:flex;"><span>  dateformNumTime <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2006-01-02 15:04&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Subtitle for home</span>
+</span></span><span style="display:flex;"><span>  homeSubtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A simple and beautiful blog&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Set disableReadOtherPosts to true in order to hide the links to other posts.</span>
+</span></span><span style="display:flex;"><span>  disableReadOtherPosts <span style="color:#f92672">=</span> false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Enable sharing buttons, if you like</span>
+</span></span><span style="display:flex;"><span>  enableSharingButtons <span style="color:#f92672">=</span> true
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Show a global language switcher in the navigation bar</span>
+</span></span><span style="display:flex;"><span>  enableGlobalLanguageMenu <span style="color:#f92672">=</span> true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Metadata mostly used in document&#39;s head</span>
+</span></span><span style="display:flex;"><span>  description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;My new homepage or blog&#34;</span>
+</span></span><span style="display:flex;"><span>  keywords <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;homepage, blog&#34;</span>
+</span></span><span style="display:flex;"><span>  images <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>taxonomies<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    category <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blog&#34;</span>
+</span></span><span style="display:flex;"><span>    tag      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tags&#34;</span>
+</span></span><span style="display:flex;"><span>    series   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;series&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>languages<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>languages.en<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello Friend NG&#34;</span>
+</span></span><span style="display:flex;"><span>    keywords <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    copyright <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>    readOtherPosts <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Read other posts&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>languages.en.params<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    subtitle  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A simple theme for Hugo&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span>languages.en.params.logo<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>      logoText <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello friend ng&#34;</span>
+</span></span><span style="display:flex;"><span>      logoHomeLink <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># path = &#34;/img/your-example-logo.svg&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># alt = &#34;Your example logo alt text&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># And you can even create generic menu</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span>menu.main<span style="color:#f92672">]]</span>
+</span></span><span style="display:flex;"><span>    identifier <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blog&#34;</span>
+</span></span><span style="display:flex;"><span>    name       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Blog&#34;</span>
+</span></span><span style="display:flex;"><span>    url        <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/posts&#34;</span>
+</span></span></code></pre></div><p>you can modify it if you want.</p>
+<h3 id="run-server">Run server</h3>
+<p>now test run the server</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo server -t themename
+</span></span></code></pre></div><h2 id="walkthrough">Walkthrough</h2>
+<p>after we&rsquo;re done with the setup, we can start doing the fun part, <strong>The Walkthrough</strong>.</p>
+<h2 id="syncing-obsidian-to-hugo">Syncing Obsidian to Hugo</h2>
+<p>first we have to sync the post we want to upload to Hugo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>robocopy source_path destination_path /mir
+</span></span></code></pre></div><p>what does this do is basically copy our <strong>markdown file</strong> (file that we wanna upload) to Hugo&rsquo;s content folder</p>
+<p><em>change the source_path to your posts folder as shown in <a href="/posts/2024/12/my-blog-pipeline/#%5e2e1ce9">here</a>.</em></p>
+<p><em>change the destination_path to Hugo /content folder</em></p>
+<h3 id="handling-images">Handling images</h3>
+<p>There&rsquo;s a slight issue on handling images from Obsidian to Hugo. The images in Obsidian is not saved <strong>on</strong> the same folder your obsidian post file. So to get over it, I use this script make by <strong>Network Chuck:</strong></p>
+<p><strong>images.py</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> shutil
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Paths (using raw strings to handle Windows backslashes correctly)</span>
+</span></span><span style="display:flex;"><span>posts_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\Rafi\Documents\usublog\content\posts&#34;</span>
+</span></span><span style="display:flex;"><span>attachments_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\Rafi\Documents\Obsidian Vault\attachments&#34;</span>
+</span></span><span style="display:flex;"><span>static_images_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\Rafi\Documents\usublog\static\images&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 1: Process each markdown file in the posts directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> filename <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(posts_dir):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> filename<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.md&#34;</span>):
+</span></span><span style="display:flex;"><span>        filepath <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(posts_dir, filename)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(filepath, <span style="color:#e6db74">&#34;r&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>            content <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Step 2: Find all image links in the format ![Image Description](/images/Pasted%20image%20...%20.png)</span>
+</span></span><span style="display:flex;"><span>        images <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\[\[([^]]*\.png)\]\]&#39;</span>, content)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Step 3: Replace image links and ensure URLs are correctly formatted</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> image <span style="color:#f92672">in</span> images:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Prepare the Markdown-compatible link with %20 replacing spaces</span>
+</span></span><span style="display:flex;"><span>            markdown_image <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;![Image Description](/images/</span><span style="color:#e6db74">{</span>image<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; &#39;</span>, <span style="color:#e6db74">&#39;%20&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>
+</span></span><span style="display:flex;"><span>            content <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[[</span><span style="color:#e6db74">{</span>image<span style="color:#e6db74">}</span><span style="color:#e6db74">]]&#34;</span>, markdown_image)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Step 4: Copy the image to the Hugo static/images directory if it exists</span>
+</span></span><span style="display:flex;"><span>            image_source <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(attachments_dir, image)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(image_source):
+</span></span><span style="display:flex;"><span>                shutil<span style="color:#f92672">.</span>copy(image_source, static_images_dir)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Step 5: Write the updated content back to the markdown file</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(filepath, <span style="color:#e6db74">&#34;w&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>            file<span style="color:#f92672">.</span>write(content)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Markdown files processed and images copied successfully.&#34;</span>)
+</span></span></code></pre></div><h2 id="push-to-github">Push to Github</h2>
+<p>after you&rsquo;ve done all that, it&rsquo;s basically done. now you just have to push it to your <strong>Github repo</strong>.</p>
+<p><em>make sure you&rsquo;re in your server directory.</em> Then type this to your terminal to push to your <strong>Github repo</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## add remote repo if haven&#39;t</span>
+</span></span><span style="display:flex;"><span>git remote add origin git@github.com:User/UserRepo.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## add all changes in current directory to workspace</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## commit changes</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;example commit message&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## push the commit to remote repo&#39;s master branch</span>
+</span></span><span style="display:flex;"><span>git push -u origin master
+</span></span></code></pre></div><p>alright!! all done, now you can choose to <strong>deploy</strong> it to your platform of choice. I use <strong>netlify</strong> for example.</p>
+<h2 id="mega-script">Mega script!</h2>
+<p>here&rsquo;s the mega script to make things easier:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"></code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>First Blogg</title>
-            <link>//localhost:1313/posts/2024/12/first-blogg/</link>
+            <link>https://usublog.netlify.app/posts/2024/12/first-blogg/</link>
             <pubDate>Wed, 11 Dec 2024 00:00:00 +0000</pubDate>
             
-            <guid>//localhost:1313/posts/2024/12/first-blogg/</guid>
+            <guid>https://usublog.netlify.app/posts/2024/12/first-blogg/</guid>
             <description>&lt;h2 id=&#34;heloo-this-is-my-first-blog&#34;&gt;Heloo this is my first blog&lt;/h2&gt;
 &lt;p&gt;sebenernya tanggal sekarang adalah 12 desember 2024. But for some reason,&lt;/p&gt;
-&lt;p&gt;hugo ga bisa display date di bulan 12 XD wtf
-!&lt;img src=&#34;//localhost:1313/images/Pasted%20image%2020241212012112.png&#34; alt=&#34;Image Description&#34;&gt;&lt;/p&gt;
+&lt;p&gt;hugo ga bisa display date di bulan 12 XD
+!&lt;img src=&#34;https://usublog.netlify.app/images/Pasted%20image%2020241212012112.png&#34; alt=&#34;Image Description&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;update&#34;&gt;#update&lt;/h3&gt;
 &lt;p&gt;ternyata bisa tapi cuma sampe 11 des. I wonder why&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h2 id="heloo-this-is-my-first-blog">Heloo this is my first blog</h2>
 <p>sebenernya tanggal sekarang adalah 12 desember 2024. But for some reason,</p>
-<p>hugo ga bisa display date di bulan 12 XD wtf
+<p>hugo ga bisa display date di bulan 12 XD
 !<img src="/images/Pasted%20image%2020241212012112.png" alt="Image Description"></p>
 <h3 id="update">#update</h3>
 <p>ternyata bisa tapi cuma sampe 11 des. I wonder why</p>

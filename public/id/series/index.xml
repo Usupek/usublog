@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on heyya welcome!</title>
-    <link>//localhost:1313/id/series/</link>
+    <link>https://usublog.netlify.app/id/series/</link>
     <description>Recent content in Series on heyya welcome!</description>
     <generator>Hugo</generator>
     <language>id</language>
-    <atom:link href="//localhost:1313/id/series/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://usublog.netlify.app/id/series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>heyya welcome!</title>
-    <link>https://usublog.netlify.app/</link>
-    <description>Recent content on heyya welcome!</description>
+    <title>Blog on heyya welcome!</title>
+    <link>https://usublog.netlify.app/tags/blog/</link>
+    <description>Recent content in Blog on heyya welcome!</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://usublog.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://usublog.netlify.app/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Blog Pipeline</title>
       <link>https://usublog.netlify.app/posts/2024/12/my-blog-pipeline/</link>
       <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
       <guid>https://usublog.netlify.app/posts/2024/12/my-blog-pipeline/</guid>
       <description>&lt;h2 id=&#34;the-setup&#34;&gt;The Setup&lt;/h2&gt;&#xA;&lt;p&gt;In this blog I will show you a walkthrough of how my Blog Pipeline works. and maybe you can follow along!&lt;/p&gt;&#xA;&lt;p&gt;but first, let&amp;rsquo;s get the setup done.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;disclaimer: I will only show a walkthrough for windows OS&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;obsidian&#34;&gt;Obsidian&lt;/h2&gt;&#xA;&lt;p&gt;If you haven&amp;rsquo;t downloaded obsidian, go download it, it&amp;rsquo;s awesome: &lt;a href=&#34;https://obsidian.md/&#34;&gt;https://obsidian.md/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;write-post&#34;&gt;Write post&lt;/h3&gt;&#xA;&lt;p&gt;after Obsidian is installed, write something in the folder you want to use (for me it&amp;rsquo;s posts folder).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>First Blogg</title>
-      <link>https://usublog.netlify.app/posts/2024/12/first-blogg/</link>
-      <pubDate>Wed, 11 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://usublog.netlify.app/posts/2024/12/first-blogg/</guid>
-      <description>&lt;h2 id=&#34;heloo-this-is-my-first-blog&#34;&gt;Heloo this is my first blog&lt;/h2&gt;&#xA;&lt;p&gt;sebenernya tanggal sekarang adalah 12 desember 2024. But for some reason,&lt;/p&gt;&#xA;&lt;p&gt;hugo ga bisa display date di bulan 12 XD&#xA;!&lt;img src=&#34;https://usublog.netlify.app/images/Pasted%20image%2020241212012112.png&#34; alt=&#34;Image Description&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;update&#34;&gt;#update&lt;/h3&gt;&#xA;&lt;p&gt;ternyata bisa tapi cuma sampe 11 des. I wonder why&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

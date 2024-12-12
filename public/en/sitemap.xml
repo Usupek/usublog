@@ -2,69 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/about/</loc>
-    <lastmod>2024-12-11T00:00:00+00:00</lastmod>
+    <loc>https://usublog.netlify.app/tags/blog/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/2024/12/first-blogg/</loc>
-    <lastmod>2024-12-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/</loc>
-    <lastmod>2024-12-11T00:00:00+00:00</lastmod>
+    <loc>https://usublog.netlify.app/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="id"
-                href="//localhost:1313/id/"
+                href="https://usublog.netlify.app/id/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/"
+                href="https://usublog.netlify.app/"
                 />
   </url><url>
-    <loc>//localhost:1313/posts/</loc>
-    <lastmod>2024-12-11T00:00:00+00:00</lastmod>
+    <loc>https://usublog.netlify.app/posts/2024/12/my-blog-pipeline/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
-    <lastmod>2024-12-11T00:00:00+00:00</lastmod>
+    <loc>https://usublog.netlify.app/posts/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://usublog.netlify.app/tags/scripting/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://usublog.netlify.app/tags/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="id"
-                href="//localhost:1313/id/tags/"
+                href="https://usublog.netlify.app/id/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/tags/"
+                href="https://usublog.netlify.app/tags/"
                 />
   </url><url>
-    <loc>//localhost:1313/tags/tes/</loc>
+    <loc>https://usublog.netlify.app/posts/2024/12/first-blogg/</loc>
     <lastmod>2024-12-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/tes2/</loc>
+    <loc>https://usublog.netlify.app/tags/first-blog/</loc>
     <lastmod>2024-12-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>https://usublog.netlify.app/about/</loc>
+  </url><url>
+    <loc>https://usublog.netlify.app/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="id"
-                href="//localhost:1313/id/categories/"
+                href="https://usublog.netlify.app/id/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/categories/"
+                href="https://usublog.netlify.app/categories/"
                 />
   </url><url>
-    <loc>//localhost:1313/series/</loc>
+    <loc>https://usublog.netlify.app/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="id"
-                href="//localhost:1313/id/series/"
+                href="https://usublog.netlify.app/id/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/series/"
+                href="https://usublog.netlify.app/series/"
                 />
   </url>
 </urlset>

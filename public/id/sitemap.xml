@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/id/categories/</loc>
+    <loc>https://usublog.netlify.app/id/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/categories/"
+                href="https://usublog.netlify.app/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="id"
-                href="//localhost:1313/id/categories/"
+                href="https://usublog.netlify.app/id/categories/"
                 />
   </url><url>
-    <loc>//localhost:1313/id/</loc>
+    <loc>https://usublog.netlify.app/id/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/"
+                href="https://usublog.netlify.app/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="id"
-                href="//localhost:1313/id/"
+                href="https://usublog.netlify.app/id/"
                 />
   </url><url>
-    <loc>//localhost:1313/id/series/</loc>
+    <loc>https://usublog.netlify.app/id/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/series/"
+                href="https://usublog.netlify.app/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="id"
-                href="//localhost:1313/id/series/"
+                href="https://usublog.netlify.app/id/series/"
                 />
   </url><url>
-    <loc>//localhost:1313/id/tags/</loc>
+    <loc>https://usublog.netlify.app/id/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/tags/"
+                href="https://usublog.netlify.app/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="id"
-                href="//localhost:1313/id/tags/"
+                href="https://usublog.netlify.app/id/tags/"
                 />
   </url>
 </urlset>
